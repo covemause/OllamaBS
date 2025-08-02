@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Please contact Ollama.</h1>
+
+<textarea @bind="_text" @bind:event="oninput" />
+
+<button @onclick="OnClick">Send</button>
+
+@code {
+    private string _text = "";
+    private void OnClick()
+    {
+        Console.WriteLine(_text);
+    }
+    
+    private void OnInput(ChangeEventArgs e)
+    {
+        _text = e.Value.ToString();
+    }
+}
